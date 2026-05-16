@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Portfolio — Your Name</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="#">Maunesh Shah</a>
+      <!-- <button id="theme-toggle" aria-label="Toggle theme" class="theme-toggle">🌙</button>
+      <button id="nav-toggle" aria-label="Toggle navigation">☰</button> -->
+      <nav id="nav" class="nav">
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero container" id="home">
+      <div class="hero-inner">
+        <div class="hero-text">
+          <h1>Hi, I'm Maunesh Shah</h1>
+          <p>Full-stack developer crafting intelligent solutions with machine learning and modern web technologies.</p>
+          <p>Specializing in financial forecasting, data analysis, and predictive modeling.</p>
+          <p><a class="btn" href="#projects">Explore My Work</a></p>
+        </div>
+        <div class="hero-art">
+          <svg width="200" height="200" viewBox="0 0 160 160" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Profile placeholder">
+            <defs>
+              <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" style="stop-color:#7c3aed;stop-opacity:1" />
+                <stop offset="100%" style="stop-color:#a78bfa;stop-opacity:1" />
+              </linearGradient>
+            </defs>
+            <rect width="160" height="160" rx="16" fill="url(#grad1)" opacity="0.1"/>
+            <circle cx="80" cy="60" r="32" fill="url(#grad1)"/>
+            <rect x="25" y="105" width="110" height="35" rx="8" fill="url(#grad1)" opacity="0.7"/>
+          </svg>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="container about">
+      <h2>About</h2>
+      <p>I'm a passionate developer with expertise in machine learning, data science, and full-stack web development. I create intelligent systems that help businesses make data-driven decisions and solve complex problems efficiently.</p>
+      <p><strong>Core Competencies:</strong> Python • Machine Learning • Data Analysis • Financial Forecasting • Web Development • Data Visualization • Statistics</p>
+    </section>
+
+    <section id="projects" class="container projects">
+      <h2>Projects</h2>
+      <div class="grid">
+        <article class="card">
+          <h3>Company Quarterly Prediction</h3>
+          <p>An intelligent ML system that analyzes historical financial data and predicts company quarterly performance for the next 4 quarters, leveraging advanced time-series analysis.</p>
+          <p style="font-size: 0.85rem; color: var(--muted); margin-bottom: 16px;"><strong>Tech:</strong> Python • yFinance • Scikit-learn • Random Forest • LSTM • NumPy • Pandas • Matplotlib</p>
+          <p><a class="btn ghost" href="projects/company-quarterly-prediction.html">View Project →</a></p>
+        </article>
+      </div>
+    </section>
+
+    <section id="contact" class="container contact-section">
+      <h2>Get In Touch</h2>
+      <div class="contact-info">
+        <div class="contact-item">
+          <span class="contact-label">Email</span>
+          <a href="mailto:shahmaunesh@gmail.com" class="contact-link">shahmaunesh@gmail.com</a>
+        </div>
+        <div class="contact-item">
+          <span class="contact-label">Phone</span>
+          <a href="tel:6353203398" class="contact-link">+1 (635) 320-3398</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; <span id="year"></span> Maunesh Shah. All rights reserved.</p>
+      <p style="font-size: 0.9rem; color: var(--muted); margin-top: 12px;">Crafted with expertise in Machine Learning & Full-Stack Development</p>
+    </div>
+  </footer>
+
+  <div id="modal" class="modal" aria-hidden="true">
+    <div class="modal-content">
+      <button id="modal-close" class="modal-close" aria-label="Close">×</button>
+      <h3 id="modal-title"></h3>
+      <p id="modal-body">Project details go here.</p>
+    </div>
+  </div>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

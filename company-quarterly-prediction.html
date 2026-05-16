@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Company Quarterly Prediction — Project</title>
+  <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="../index.html">Maunesh Shah</a>
+      <button id="theme-toggle" aria-label="Toggle theme" class="theme-toggle">🌙</button>
+      <nav class="nav">
+        <a href="../index.html">Home</a>
+      </nav>
+    </div>
+  </header>
+  <main class="container">
+    <h1>Company Quarterly Prediction</h1>
+    <p><strong>Problem:</strong> Investors and businesses need data-driven forecasting for strategic financial planning, but manual analysis is time-consuming and often inaccurate due to market volatility.</p>
+    <p><strong>Solution:</strong> An intelligent ML system that analyzes historical company financials and predicts the next 4 quarters with high accuracy, enabling smarter investment and business decisions.</p>
+
+     <h2>Project Explanation</h2>
+    <p>This project takes historical quarterly financial statements for a company (from yFinance or a CSV) and produces short-term forecasts for key financial metrics (for example, revenue and net income) for the next four quarters.</p>
+    <p>High-level workflow:</p>
+    <ul>
+      <li><strong>Input:</strong> a ticker symbol (e.g., AAPL) or a user-provided dataset with quarterly financial fields.</li>
+      <li><strong>Preprocessing:</strong> select features (Total Revenue, Net Income, EBITDA, Gross Profit), drop or impute missing values, and scale features using MinMaxScaler.</li>
+      <li><strong>Windowing:</strong> convert the scaled time series into fixed-length windows (e.g., 3 quarters) so the model learns temporal patterns.</li>
+      <li><strong>Modeling:</strong> train a model (Random Forest for tabular windowed data or LSTM for sequence modeling) to predict the target metric one quarter ahead; optionally iterate to predict multiple quarters ahead.</li>
+      <li><strong>Evaluation:</strong> measure performance with Mean Absolute Error (MAE) and examine residuals and plots.</li>
+      <li><strong>Output:</strong> inverse-transform predictions to original scale and render charts comparing actual vs predicted values; export predictions as CSV if needed.</li>
+    </ul>
+    <p>Notes and tips:</p>
+    <ul>
+      <li>Using windowing + recursive prediction lets you forecast multiple future quarters, but errors can compound; a multi-output model is an alternative.</li>
+      <li>Feature engineering (seasonality adjustments, ratios, and lagged features) can improve accuracy.</li>
+      <li>Model retraining on new data is recommended quarterly to keep predictions current.</li>
+    </ul>
+
+    <h2>Working</h2>
+    <ol>
+      <li>Collect historical company financial data using yFinance.</li>
+      <li>Preprocess data (handle missing values, scale with MinMaxScaler).</li>
+      <li>Convert into time-series windows for quarterly prediction.</li>
+      <li>Train model (Random Forest or LSTM).</li>
+      <li>Evaluate with MAE and predict next 4 quarters.</li>
+      <li>Visualize predictions with charts.</li>
+    </ol>
+
+    <h2>Advantages</h2>
+    <ul>
+      <li>Supports investment and planning decisions</li>
+      <li>Reduces manual analysis effort</li>
+      <li>Scales to large datasets</li>
+    </ul>
+
+   
+
+    <!-- <h2>System Requirements</h2>
+    <pre>
+Hardware: Windows, 4GB+ RAM
+Software: Python, Jupyter/VS Code
+Libraries: pandas, numpy, matplotlib, scikit-learn, tensorflow (optional), yfinance
+    </pre> -->
+
+    <h2>How to run</h2>
+    <p>Download the code below and run the script or open the notebook in Jupyter.</p>
+    <p><a class="btn" href="company-quarterly-prediction/prediction.py" download>Download script</a>
+       <a class="btn ghost" href="company-quarterly-prediction/requirements.txt">Requirements</a></p>
+
+    <!-- <h2>Code (excerpt)</h2>
+    <pre style="white-space:pre-wrap;background:rgba(255,255,255,0.03);padding:12px;border-radius:8px;color:var(--muted);">import yfinance as yf
+import pandas as pd
+import numpy as np
+from sklearn.preprocessing import MinMaxScaler
+from sklearn.ensemble import RandomForestRegressor
+from sklearn.metrics import mean_absolute_error
+
+# see full script in the download
+    </pre> -->
+
+    <h2>Limitations</h2>
+    <ul>
+      <li>Market volatility can reduce prediction accuracy</li>
+      <li>Depends on historical data quality</li>
+      <li>Cannot foresee sudden events</li>
+    </ul>
+
+  </main>
+  <section class="container contact-section">
+    <h2>Contact</h2>
+    <div class="contact-info">
+      <div class="contact-item">
+        <span class="contact-label">Email</span>
+        <a href="mailto:shahmaunesh@gmail.com" class="contact-link">shahmaunesh@gmail.com</a>
+      </div>
+      <div class="contact-item">
+        <span class="contact-label">Phone</span>
+        <a href="tel:6353203398" class="contact-link">+1 (635) 320-3398</a>
+      </div>
+    </div>
+  </section>
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; <span id="year"></span> Maunesh Shah. All rights reserved.</p>
+      <p style="font-size: 0.9rem; color: var(--muted); margin-top: 12px;">Crafted with expertise in Machine Learning & Financial Forecasting</p>
+    </div>
+  </footer>
+  <script src="../js/script.js"></script>
+</body>
+</html>
