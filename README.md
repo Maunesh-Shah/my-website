@@ -1,28 +1,26 @@
-# Company Quarterly Prediction
+# Portfolio site (HTML / CSS / JS)
 
-This project analyzes historical company financials and predicts the next 4 quarters using machine learning.
+This is a small, static portfolio scaffold built with only HTML, CSS and vanilla JavaScript.
 
-How to run:
-
-```powershell
-python prediction.py
-```
-
-Install dependencies:
+Quick start:
 
 ```powershell
-python -m pip install -r requirements.txt
+# open the site in your default browser (Windows)
+start index.html
 ```
 
 Files:
-- `prediction.py` — example script that fetches quarterly financials via yFinance, trains a Random Forest, and predicts revenue.
-- `requirements.txt` — Python dependencies.
+- `index.html` — main page
+- `css/styles.css` — styles
+- `js/script.js` — simple interactivity
+
+Edit content and replace placeholders with your info and project links.
 
 Contact
 -------
 
-Author: Maunesh Shah
-
-Email: shahmaunesh@gmail.com
+Maunesh Shah
 
 Phone: 6353203398
+
+Email: shahmaunesh@gmail.com
